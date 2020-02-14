@@ -1,6 +1,7 @@
 body {
-  background: red;
-  color: white;
-  text-shadow: 2px 2px 1em #000000, 15px 2px 2em #000000, 2px 15px 3em #000000;
+  background: #262729;
+  color: #ccd0e7;
+  font-family: sans-serif;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
