@@ -1,5 +1,6 @@
 body {
   background: red;
   color: white;
+  text-shadow: 2px 2px 1em #000000, 15px 2px 2em #000000, 2px 15px 3em #000000;
 }
 /*# sourceMappingURL=main.css.map */
