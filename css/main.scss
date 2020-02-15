@@ -4,4 +4,26 @@ body {
     font-family: sans-serif;
     text-align: center;
     text-transform: lowercase;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}
+.board {
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .row {
+        .square {
+            display: inline-block;
+            height: 90px;
+            width: 90px;
+            background: red;
+            border-radius: 20px;
+            margin: 5px;
+            color: white;
+            font-size: 40px;
+        }
+    }
 }
