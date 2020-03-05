@@ -8,4 +8,14 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+.board .row {
+  display: block;
+}
+
+.board .row .square {
+  display: inline-block;
+  padding: 50px;
+  background: green;
+}
 /*# sourceMappingURL=main.css.map */

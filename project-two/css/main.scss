@@ -8,3 +8,14 @@ body {
     height: 100vh;
     margin: 0;
 }
+
+.board {
+    .row {
+        display: block;
+        .square {
+            display: inline-block;
+            padding: 50px;
+            background: green;
+        }
+    }
+}
