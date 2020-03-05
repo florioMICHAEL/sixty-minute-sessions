@@ -1,27 +1,58 @@
-var board = [];
-const squareCount = 9;
-var allSquares = document.getElementsByClassName("square");
-var turn = 0;
-var currentMove = "";
+const   squarenum = 8,
+        board = new Array(squarenum),
+        pieces = [
+            {
+                name: "pawnOne",
+                rank: 1,
+                file: 0,
+                // move: mpvePiece(pawn),
+                team: "black",
+            },
+            {
+                name: "pawnTwo",
+                rank: 1,
+                file: 1,
+                // move: mpvePiece(pawn),
+                team: "black",
+            },
+            {
+                name: "pawnThree",
+                rank: 1,
+                file: 2,
+                // move: mpvePiece(pawn),
+                team: "black",
+            }
+        ];
 
-for (var i = 0; i < squareCount; ++i) {
-    board[i] = null;
-    allSquares[i].setAttribute('data-board-index', i);
+class Square {
+    constructor(x, y, bool, string) {
+        this.rank = x;
+        this.file = y;
+        this.taken = bool;
+        this.piece = string;
+    }
 }
 
-$(".square").click(function() {
-    var squareNum = $(this).attr('data-board-index');
-    if (board[squareNum] == null) {
-        ++turn % 2 === 0 ? currentMove = "o" : currentMove = "x";
-        board[squareNum] = currentMove;
-        $(this).text(currentMove);
-        console.log(board);
-        checkWin();
-    }
-});
+for (var i = 0; i < squarenum; i++) {
+    board[i] = new Array(squarenum);
+}
 
-function checkWin() {
-    if (board[0] == currentMove && board[1] == currentMove && board[2] == currentMove  || board[3] == currentMove && board[4] == currentMove && board[5] == currentMove  || board[6] == currentMove && board[7] == currentMove && board[8] == currentMove  || board[0] == currentMove && board[3] == currentMove && board[6] == currentMove  || board[1] == currentMove && board[4] == currentMove && board[7] == currentMove  || board[2] == currentMove && board[5] == currentMove && board[8] == currentMove  || board[0] == currentMove && board[4] == currentMove && board[8] == currentMove  || board[2] == currentMove && board[4] == currentMove && board[6] == currentMove) {
-        console.log(currentMove + '  won!');
+for (var x = 0; x < squarenum; ++x) {
+    for (var y = 0; y < squarenum; ++y) {
+        board[x][y] = new Square( x, y, false, null );
     }
 }
+
+
+pieces.forEach(function(piece)  {
+    board.forEach(function(rank) {
+        rank.forEach(function(file) {
+            if ( piece.rank == file.rank && piece.file == file.file ) {
+                file.taken = true;
+                file.piece = piece.name;
+            }
+        })
+    })
+})
+
+console.log(board)
