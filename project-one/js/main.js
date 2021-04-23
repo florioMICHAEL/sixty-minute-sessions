@@ -12,7 +12,7 @@ for (var i = 0; i < squareCount; ++i) {
 $(".square").click(function() {
     var squareNum = $(this).attr('data-board-index');
     if (board[squareNum] == null) {
-        ++turn % 2 === 0 ? currentMove = "o" : currentMove = "x";
+        ++turn % 2 === 0 ? currentMove = "o" : currentMove = "I";
         board[squareNum] = currentMove;
         $(this).text(currentMove);
         console.log(board);
